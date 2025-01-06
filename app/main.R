@@ -1,12 +1,13 @@
 box::use(
   htmltools[div, h1, img],
-  shiny.router[route, route_link, router_ui],
+  nblR[nbl_results],
+  shiny.router[route, route_link, router_server, router_ui],
   shiny.semantic[menu, menu_item, semanticPage],
-  shiny[moduleServer, NS],
+  shiny[moduleServer, NS, observe],
 )
 
 box::use(
-  app/view/table,
+  app/view/results_table,
 )
 
 #' @export
@@ -23,15 +24,15 @@ ui <- function(id) {
     div(style = "margin-left: 10px !important; margin-right: 10px !important;",
       menu(
         menu_item(
-          "Season Stats",
-          href = route_link("season_stats")
+          "Match Results",
+          href = route_link("results_table")
         )
       )
     ),
     div(class = "content",
       style = "margin-left: 10px; margin-right: 10px;",
       router_ui(
-        route("season_stats", table$ui(ns("season_stats")))
+        route("results_table", results_table$ui(ns("results_table")))
       )
     )
   )
@@ -40,6 +41,25 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
+    router_server("results_table")
+
+    # Pull Results
+    results_wide <- nbl_results(wide_or_long = "wide")
+    #results_long <- nbl_results(wide_or_long = "long")
+
+    # Pull Box Scores
+    #box_team <- nbl_box_team()
+    #box_player <- nbl_box_player()
+
+    # Pull Shots
+    #shots <- nbl_shots()
+
+    # Pull PBP
+    #pbp <- nbl_pbp()
+
+    observe({
+      results_table$server("results_table", results_wide)
+    })
 
   })
 }
