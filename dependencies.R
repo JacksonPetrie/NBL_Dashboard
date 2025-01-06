@@ -1,5 +1,7 @@
 # This file allows packrat (used by rsconnect during deployment) to pick up dependencies.
 library(dplyr)
+library(htmltools)
+library(nblR)
 library(plotly)
 library(reactable)
 library(rhino)

@@ -834,6 +834,18 @@
       ],
       "Hash": "4fd8900853b746af55b81fda99da7695"
     },
+    "nblR": {
+      "Package": "nblR",
+      "Version": "0.0.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "cli",
+        "magrittr"
+      ],
+      "Hash": "64071e96e085eeae12cee62eff49d4ef"
+    },
     "nlme": {
       "Package": "nlme",
       "Version": "3.1-164",
