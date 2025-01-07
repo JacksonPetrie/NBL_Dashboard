@@ -18,8 +18,7 @@ ui <- function(id) {
     title = "NBL Dashboard",
     div(
       style = "display: flex; align-items: center; margin-left: 10px; margin-bottom: 10px;",
-      img(src = "static/Main_logo.png", height = "40px"),
-      h1("NBL Dashboard")
+      img(src = "static/Main_logo.png", height = "40px")
     ),
     div(style = "margin-left: 10px !important; margin-right: 10px !important;",
       menu(
@@ -45,6 +44,8 @@ server <- function(id) {
 
     # Pull Results
     results_wide <- nbl_results(wide_or_long = "wide")
+    clean_wide <- results_wide_cleaning$wide_clean(results_wide)
+
     #results_long <- nbl_results(wide_or_long = "long")
 
     # Pull Box Scores
@@ -58,7 +59,7 @@ server <- function(id) {
     #pbp <- nbl_pbp()
 
     observe({
-      results_table$server("results_table", results_wide)
+      results_table$server("results_table", clean_wide)
     })
 
   })
