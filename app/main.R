@@ -7,6 +7,7 @@ box::use(
 )
 
 box::use(
+  app/logic/results_wide_cleaning,
   app/view/results_table,
 )
 

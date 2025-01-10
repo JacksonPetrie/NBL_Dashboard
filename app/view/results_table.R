@@ -34,16 +34,9 @@ server  <- function(id, data) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
-    filtered_data <- data |>
-      arrange(match_id) |>
-      select(
-        season,
-        
-      )
-
     output$table <- renderReactable({
-      req(filtered_data)  # Ensure data is available before rendering
-      results_reactable$table(filtered_data)
+      req(data)  # Ensure data is available before rendering
+      results_reactable$table(data)
     })
 
   })
