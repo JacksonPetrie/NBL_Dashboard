@@ -1,5 +1,4 @@
 box::use(
-  dplyr[arrange, select],
   htmltools[div, h2],
   reactable[reactableOutput, renderReactable],
   shiny.semantic[card],

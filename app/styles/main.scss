@@ -1,0 +1,45 @@
+/* Primary Color Scale */
+$primary-color: #15178f;
+$secondary-color: #a1b5d8;
+$tertiary-color: #738290;
+$accent1-color: #80ff72;
+$accent2-color: #f72585;
+
+/* Background Colors */
+$background-color: #fafafa;
+
+/* Background Color */
+.base {
+  display: flex;
+  height: 100vh; // Ensures the container fills the vertical space
+  width: 100%; // Ensures the container fills the horizontal space
+  overflow: hidden; // Prevents elements from overflowing outside the container
+  box-sizing: border-box;
+
+  /* Sidebar Container */
+  .sidebar {
+    width: 250px;
+    background-color: $background-color;
+    color: white;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: $background-color;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+}
+
+.ui.menu {
+  .item {
+    &:hover {
+      background-color: $secondary-color !important;
+    }
+  }
+}

@@ -1,8 +1,8 @@
 box::use(
-  htmltools[div, h1, img],
+  htmltools[div, img],
   nblR[nbl_results],
   shiny.router[route, route_link, router_server, router_ui],
-  shiny.semantic[menu, menu_item, semanticPage],
+  shiny.semantic[icon, menu, menu_header, menu_item, semanticPage],
   shiny[moduleServer, NS, observe],
 )
 
@@ -18,21 +18,51 @@ ui <- function(id) {
   semanticPage(
     title = "NBL Dashboard",
     div(
-      style = "display: flex; align-items: center; margin-left: 10px; margin-bottom: 10px;",
-      img(src = "static/Main_logo.png", height = "40px")
-    ),
-    div(style = "margin-left: 10px !important; margin-right: 10px !important;",
-      menu(
-        menu_item(
-          "Match Results",
-          href = route_link("results_table")
+      class = "base",
+      div(
+        class = "sidebar",
+        div(
+          class = "logo",
+          img(src = "static/Main_logo.png", height = "40px")
+        ),
+        div(
+          class = "selection menu",
+          menu(
+            class = "ui vertical secondary pointing menu",
+            menu_item(
+              "Match Results",
+              href = route_link("results_table")
+            )
+          )
+        ),
+        div(
+          class = "bottom menu",
+          menu(
+            class = "ui three item secondary menu",
+            menu_item(
+              icon(
+                class = "cog icon"
+              )
+            ),
+            menu_item(
+              icon(
+                class = "info circle icon"
+              )
+            ),
+            menu_item(
+              icon(
+                class = "user circle icon"
+              )
+            )
+          )
         )
-      )
-    ),
-    div(class = "content",
-      style = "margin-left: 10px; margin-right: 10px;",
-      router_ui(
-        route("results_table", results_table$ui(ns("results_table")))
+      ),
+      div(
+        class = "content",
+        style = "margin-left: 10px; margin-right: 10px;",
+        router_ui(
+          route("results_table", results_table$ui(ns("results_table")))
+        )
       )
     )
   )
