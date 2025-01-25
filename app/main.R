@@ -17,6 +17,7 @@ ui <- function(id) {
 
   semanticPage(
     title = "NBL Dashboard",
+    style = "margin: 0px;",
     div(
       class = "base",
       div(
