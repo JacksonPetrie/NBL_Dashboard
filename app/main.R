@@ -24,12 +24,12 @@ ui <- function(id) {
         class = "sidebar",
         div(
           class = "logo",
-          img(src = "static/Main_logo.png", height = "40px")
+          img(src = "static/Main_logo.png", height = "70px")
         ),
         div(
           class = "selection menu",
           menu(
-            class = "ui vertical secondary pointing menu",
+            class = "ui vertical secondary menu",
             menu_item(
               "Match Results",
               href = route_link("results_table")

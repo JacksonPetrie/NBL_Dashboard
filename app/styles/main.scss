@@ -8,14 +8,17 @@ $accent2-color: #f72585;
 /* Background Colors */
 $background-color: #fafafa;
 
+/* Rounded Corners */
+$corner: 0.28571429rem;
+
 /* Background Color */
 .base {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 100%;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  padding: 5px;
   box-sizing: border-box;
 
   /* Sidebar Container */
@@ -25,8 +28,26 @@ $background-color: #fafafa;
     background-color: $background-color;
     color: white;
     box-sizing: border-box;
-    overflow-y: auto;
-    height: 100%;
+    border-radius: $corner;
+
+    /* Sidebar Grid Structure */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    .logo {
+      grid-row: 1;
+      padding-left: 5px;
+      padding-top: 5px;
+    }
+
+    .selection.menu {
+      padding-top: 10px;
+      grid-row: 2;
+    }
+
+    .bottom.menu {
+      grid-row: 3;
+    }
   }
 
   .content {
@@ -37,6 +58,7 @@ $background-color: #fafafa;
     overflow-y: auto;
     overflow-x: hidden;
     box-sizing: border-box;
+    border-radius: $corner;
   }
 }
 
@@ -46,4 +68,9 @@ $background-color: #fafafa;
       background-color: $secondary-color !important;
     }
   }
+}
+
+.ui.vertical.menu {
+  margin: 0 !important;
+  padding-right: 5px;
 }
