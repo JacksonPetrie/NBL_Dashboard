@@ -31,8 +31,20 @@ ui <- function(id) {
           menu(
             class = "ui vertical secondary menu",
             menu_item(
-              "Match Results",
+              "Fixture",
               href = route_link("results_table")
+            ),
+            menu_item(
+              "Team",
+              href = route_link("placeholder")
+            ),
+            menu_item(
+              "Player",
+              href = route_link("placeholder")
+            ),
+            menu_item(
+              "Advanced",
+              href = route_link("placeholder")
             )
           )
         ),
@@ -60,7 +72,6 @@ ui <- function(id) {
       ),
       div(
         class = "content",
-        style = "margin-left: 10px; margin-right: 10px;",
         router_ui(
           route("results_table", results_table$ui(ns("results_table")))
         )

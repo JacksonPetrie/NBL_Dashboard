@@ -18,17 +18,15 @@ $corner: 0.28571429rem;
   grid-template-rows: 100%;
   height: 100vh;
   width: 100%;
-  padding: 5px;
   box-sizing: border-box;
+  background-color: $background-color;
 
   /* Sidebar Container */
   .sidebar {
     grid-column: 1;
     grid-row: 1;
-    background-color: $background-color;
-    color: white;
+    background-color: $tertiary-color;
     box-sizing: border-box;
-    border-radius: $corner;
 
     /* Sidebar Grid Structure */
     display: grid;
@@ -42,6 +40,7 @@ $corner: 0.28571429rem;
 
     .selection.menu {
       padding-top: 10px;
+      padding-left: 5px;
       grid-row: 2;
     }
 
@@ -64,6 +63,7 @@ $corner: 0.28571429rem;
 
 .ui.menu {
   .item {
+    color: white;
     &:hover {
       background-color: $secondary-color !important;
     }

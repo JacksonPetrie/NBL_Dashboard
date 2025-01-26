@@ -20,7 +20,7 @@ ui <- function(id) {
       h2("Filters")
     ),
     card(
-      class = "content",
+      class = "output",
       style = "width: 100%; padding: 10px;",
       reactableOutput(ns("table"))
     )
