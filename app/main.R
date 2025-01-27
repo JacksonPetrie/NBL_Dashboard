@@ -31,7 +31,7 @@ ui <- function(id) {
           menu(
             class = "ui vertical secondary menu",
             menu_item(
-              "Fixture",
+              "Match Results",
               href = route_link("results_table")
             ),
             menu_item(
@@ -71,7 +71,7 @@ ui <- function(id) {
         )
       ),
       div(
-        class = "content",
+        class = "page",
         router_ui(
           route("results_table", results_table$ui(ns("results_table")))
         )

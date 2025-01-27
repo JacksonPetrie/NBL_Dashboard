@@ -14,15 +14,20 @@ ui <- function(id) {
   ns <- NS(id)
 
   div(
-    card(
-      class = "filter",
-      style = "width: 100%; padding: 10px;",
-      h2("Filters")
+    class = "match_results",
+    div(
+      class = "filter_container",
+      card(
+        class = "filter",
+        h2("Filters")
+      )
     ),
-    card(
-      class = "output",
-      style = "width: 100%; padding: 10px;",
-      reactableOutput(ns("table"))
+    div(
+      class = "content_container",
+      card(
+        class = "results_table",
+        reactableOutput(ns("table"))
+      )
     )
   )
 }

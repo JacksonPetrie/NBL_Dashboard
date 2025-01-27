@@ -16,7 +16,7 @@ $corner: 0.28571429rem;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 100%;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
   background-color: $background-color;
@@ -49,15 +49,10 @@ $corner: 0.28571429rem;
     }
   }
 
-  .content {
+  .page {
     grid-column: 2;
     grid-row: 1;
-    padding: 20px;
-    background-color: $background-color;
     overflow-y: auto;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    border-radius: $corner;
   }
 }
 
@@ -73,4 +68,40 @@ $corner: 0.28571429rem;
 .ui.vertical.menu {
   margin: 0 !important;
   padding-right: 5px;
+}
+
+.match_results {
+  padding: 20px;
+  background-color: $background-color;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  .filter_container {
+    grid-row: 1;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: $corner;
+
+    .ui.card.filter {
+      width: 100%;
+      padding: 5px;
+    }
+  }
+
+  .content_container {
+    grid-row: 2;
+    width: 100%;
+    padding: 10px;
+    background-color: $background-color;
+    box-sizing: border-box;
+    border-radius: $corner;
+    overflow-x: auto;
+
+    .ui.card.results_table {
+      width: 100%;
+      padding: 5px;
+    }
+  }
 }
